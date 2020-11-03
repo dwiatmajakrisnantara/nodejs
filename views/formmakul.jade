@@ -1,0 +1,42 @@
+extends layout
+
+block content
+	nav.navbar.navbar-expand-lg.navbar-light.fixed-top#mainNav
+		.container
+			a.navbar-brand.js-scroll-trigger(href="#page-top") Start Bootstrap 
+				button.navbar-toggler.navbar-toggler-right(type="button",data-toggle="collapse",data-target="#navbarResponsive",aria-controls="navbarResponsive",aria-expanded="false",aria-label="Toggle navigation")
+				| Menu
+			i.fas.fa-bars
+				.collapse.navbar-collapse#navbarResponsive
+					ul.navbar-nav.ml-auto
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/") Home
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/data") Mahasiswa
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/datamakul") Mata Kuliah	
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/form") Form Mahasiswa
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/formmakul") Form Mata Kuliah
+	header.masthead
+		.container.d-flex.h-100.align-items-center
+			.mx-auto.text-center
+				h1.mx-auto.my-0.text-uppercase Form Mata Kuliah
+	main.container(role="main")
+		.mt-3
+				form(method="post",action="/formmakul")
+					.form-group
+						label(for="kodemakul") Kode Mata Kuliah
+						input.form-control(type="text",placeholder="Kode Mata Kuliah", name="kode_makul")
+					.form-group
+						label(for="matakuliah") Mata Kuliah
+						input.form-control(type="text", placeholder="Mata Kuliah", name="nama_makul")
+					.form-group
+						label(for="sks") Jumlah SKS 
+						input.form-control(type="text", placeholder="Jumlah SKS", name="jml_sks")
+					.form-group
+						label(for="semester") Semester 
+						input.form-control(type="text", placeholder="Semester", name="semester")
+					br
+					button.btn.btn-primary(type="submit") Submit

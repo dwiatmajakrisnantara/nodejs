@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	nav.navbar.navbar-expand-lg.navbar-light.fixed-top#mainNav
+		.container
+			a.navbar-brand.js-scroll-trigger(href="#page-top") Start Bootstrap 
+				button.navbar-toggler.navbar-toggler-right(type="button",data-toggle="collapse",data-target="#navbarResponsive",aria-controls="navbarResponsive",aria-expanded="false",aria-label="Toggle navigation")
+				| Menu
+			i.fas.fa-bars
+				.collapse.navbar-collapse#navbarResponsive
+					ul.navbar-nav.ml-auto
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/") Home
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/data") Mahasiswa
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/datamakul") Mata Kuliah	
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/form") Form Mahasiswa
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/formmakul") Form Mata Kuliah
+	header.masthead
+		.container.d-flex.h-100.align-items-center
+			.mx-auto.text-center
+				h1.mx-auto.my-0.text-uppercase Home
+				h2.text-white-50.mx-auto.mt-2.mb-5 A free, responsive, one page Bootstrap theme created by Start Bootstrap
+				a.btn.btn-primary.js-scroll-trigger(href="/data") Get Started

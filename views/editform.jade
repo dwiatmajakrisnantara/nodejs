@@ -1,0 +1,64 @@
+extends layout
+
+block content
+	nav.navbar.navbar-expand-lg.navbar-light.fixed-top#mainNav
+		.container
+			a.navbar-brand.js-scroll-trigger(href="#page-top") Start Bootstrap 
+				button.navbar-toggler.navbar-toggler-right(type="button",data-toggle="collapse",data-target="#navbarResponsive",aria-controls="navbarResponsive",aria-expanded="false",aria-label="Toggle navigation")
+				| Menu
+			i.fas.fa-bars
+				.collapse.navbar-collapse#navbarResponsive
+					ul.navbar-nav.ml-auto
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/") Home
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/data") Mahasiswa
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/datamakul") Mata Kuliah	
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/form") Form Mahasiswa
+						li.nav-item
+							a.nav-link.js-scroll-trigger(href="/formmakul") Form Mata Kuliah
+	header.masthead
+		.container.d-flex.h-100.align-items-center
+			.mx-auto.text-center
+				h1.mx-auto.my-0.text-uppercase Form Mahasiswa
+	main.container(role="main")
+		.mt-3
+			h1 Halaman Form Masukan
+			for row, index in data
+				form(method="post",action="/form/updates")
+					.form-group
+						input.form-control(type="hidden", name="updatenim" value="#{row.nim}")
+					.form-group
+						label(for="InputNIM") NIM
+						input.form-control(type="text",placeholder="NIM", name="nim"
+						value="#{row.nim}")
+					.form-group
+						label(for="InputNamaLengkap") Nama Lengkap 
+						input.form-control(type="text", placeholder="Nama Lengkap", name="namalengkap"
+						value="#{row.namalengkap}")
+					.form-group
+						label(for="InputProdi") Program Studi 
+						select.form-control#exampleFormControlSelect1(name="prodi")
+							option(value="Informatika") Informatika
+							option(value="Teknologi Informasi") Teknologi Informasi
+							option(value="Sistem Informasi S1") Sistem Informasi S1
+							option(value="Sistem Informasi D3") Sistem Informasi D3
+							option(value="Informatika") Informatika
+							option(value="Teknik Industri") Teknik Industri
+					.form-group
+						label(for="InputEmail") Email 
+						input.form-control(type="text", placeholder="Alamat Email", name="email"
+						value="#{row.email}")
+					.form-group
+						label(for="InputAlamat") Alamat 
+						input.form-control(type="text", placeholder="Alamat", name="alamat"
+						value="#{row.alamat}")
+					.form-group
+						label(for="InputTgllahir") Tanggal Lahir 
+						input.form-control(type="text", placeholder="Tanggal Lahir", name="tgllahir"
+						value="#{row.tgl_lahir}")
+					br
+					button.btn.btn-primary(type="submit") Submit
+			
